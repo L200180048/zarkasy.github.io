@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="./theme/css/theme.css">
 
   
-  <meta name="description" content="Janus adalah webrtc server, aplikasi yang bertugas dalam mengatur koneksi webrtc antar client. Namun kekurangan software ini adalah dokumentasinya yang kurang jelas. Disini saya akan menuliskan pemahaman awal bagaimana setup janus. Server janus dinyalakan. Setup client janus dengan janus.js. Ketika success kita attach pluginnnya. Jika success attach plugin, baru …">
+  <meta name="description" content="Janus adalah webrtc server, aplikasi yang bertugas dalam mengatur koneksi webrtc antar client. Namun kekurangan software ini adalah dokumentasinya yang kurang jelas. Disini saya akan menuliskan pemahaman awal bagaimana setup janus. 1. Server janus dinyalakan. 2. Setup client janus dengan janus.js. Ketika success kita attach pluginnnya. 3. Jika success …">
 
 
 </head>
@@ -56,12 +56,13 @@
     </header>
     <div class="content">
       <p>Janus adalah webrtc server, aplikasi yang bertugas dalam mengatur koneksi webrtc antar client. Namun kekurangan software ini adalah dokumentasinya yang kurang jelas. Disini saya akan menuliskan pemahaman awal bagaimana setup janus.</p>
-<ol>
-<li>Server janus dinyalakan.</li>
-<li>Setup client janus dengan janus.js. Ketika success kita attach pluginnnya.</li>
-<li>Jika success attach plugin, baru kita memiliki handle yang bisa untuk mengotak-atik plugin api.</li>
-<li>Untuk melakukan operasi plugin, janus menggunakan json dan fungsi handle.send({//json}). Disini kita bisa melakukan operasi list group, create group, delete group, dsb. </li>
-</ol>
+<div class="highlight"><pre><span></span><span class="mi">1</span>. <span class="nv">Server</span> <span class="nv">janus</span> <span class="nv">dinyalakan</span>.
+<span class="mi">2</span>. <span class="nv">Setup</span> <span class="nv">client</span> <span class="nv">janus</span> <span class="nv">dengan</span> <span class="nv">janus</span>.<span class="nv">js</span>. <span class="nv">Ketika</span> <span class="nv">success</span> <span class="nv">kita</span> <span class="nv">attach</span> <span class="nv">pluginnnya</span>.
+<span class="mi">3</span>. <span class="nv">Jika</span> <span class="nv">success</span> <span class="nv">attach</span> <span class="nv">plugin</span>, <span class="nv">baru</span> <span class="nv">kita</span> <span class="nv">memiliki</span> <span class="nv">handle</span> <span class="nv">yang</span> <span class="nv">bisa</span> <span class="nv">untuk</span> <span class="nv">mengotak</span><span class="o">-</span><span class="nv">atik</span> <span class="nv">plugin</span> <span class="nv">api</span>.
+<span class="mi">4</span>. <span class="nv">Untuk</span> <span class="nv">melakukan</span> <span class="nv">operasi</span> <span class="nv">plugin</span>, <span class="nv">janus</span> <span class="nv">menggunakan</span> <span class="nv">json</span> <span class="nv">dan</span> <span class="nv">fungsi</span> <span class="nv">handle</span>.<span class="k">send</span><span class="ss">(</span>{<span class="o">//</span><span class="nv">json</span>}<span class="ss">)</span>. <span class="nv">Disini</span> <span class="nv">kita</span> <span class="nv">bisa</span> <span class="nv">melakukan</span> <span class="nv">operasi</span> <span class="nv">list</span> <span class="nv">group</span>, <span class="nv">create</span> <span class="nv">group</span>, <span class="nv">delete</span> <span class="nv">group</span>, <span class="nv">dsb</span>.
+</pre></div>
+
+
 <p>Sekian.</p>
     </div>
   </article>
