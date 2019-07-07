@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Gardenia - Programming</title><link href="https://gardenia.id/" rel="alternate"></link><link href="https://gardenia.id/feeds/programming.atom.xml" rel="self"></link><id>https://gardenia.id/</id><updated>2019-07-07T01:43:00+08:00</updated><subtitle>Zarkasy dan Keluarga</subtitle><entry><title>Beberapa Shortcut Linux dan Vim</title><link href="https://gardenia.id/beberapa-shortcut-linux-dan-vim.html" rel="alternate"></link><published>2019-07-07T01:43:00+08:00</published><updated>2019-07-07T01:43:00+08:00</updated><author><name>Zarkasy</name></author><id>tag:gardenia.id,2019-07-07:/beberapa-shortcut-linux-dan-vim.html</id><summary type="html">&lt;p&gt;Bagi yang programmer pasti lama kelamaan coba-coba pakai linux dan vim. Memang ga tau kenapa untuk programmer ini linux ini merupakan OS yang sering dipakai, mungkin karena beberapa source code hanya bisa dicomplie di linux, ini sih sebenarnya alasan mengapa saya beralih ke linux walaupun masih juga pakai windows. Nah …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Bagi yang programmer pasti lama kelamaan coba-coba pakai linux dan vim. Memang ga tau kenapa untuk programmer ini linux ini merupakan OS yang sering dipakai, mungkin karena beberapa source code hanya bisa dicomplie di linux, ini sih sebenarnya alasan mengapa saya beralih ke linux walaupun masih juga pakai windows. Nah disini saya akan berbagi beberapa shortcut yang berguna banget untuk produktifitas dalam programming.&lt;/p&gt;
+&lt;h2&gt;Linux shortcuts&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;alt-tab : Untuk pindah antar aplikasi. Berguna banget misal pas coding kita butuh untuk browsing sesuatu, daripada pakai mouse mending pakai shorcut ini.&lt;/li&gt;
+&lt;li&gt;windows + arrow : Untuk memposisikan window aplikasi kita secara split. Untuk posisi splitnya tergantung arrow yang dipencet, bisa posisi kanan, kiri, atas atau bawah.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Vim shortcuts&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;gt : Pindah next tab. Shotcut ini bener-bener baru tau, karena sebelumnya pakai vim di windows biasanya ga pernah pakai tab, biasanya pakai buffer aja.&lt;/li&gt;
+&lt;li&gt;tabnew : buka tab baru&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Mungkin itu aja, semoga bermanfaat.&lt;/p&gt;</content></entry></feed>
