@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="./theme/css/theme.css">
 
   
-  <meta name="description" content="Janus adalah webrtc server, aplikasi yang bertugas dalam mengatur koneksi webrtc antar client. Namun kekurangan software ini adalah dokumentasinya yang kurang jelas. Disini saya akan menuliskan pemahaman awal bagaimana setup janus. 1. Server janus dinyalakan. 2. Setup client janus dengan janus.js. Ketika success kita attach pluginnnya. 3. Jika success …">
+  <meta name="description" content="Janus adalah webrtc server, aplikasi yang bertugas dalam mengatur koneksi webrtc antar client. Namun kekurangan software ini adalah dokumentasinya yang kurang jelas. Disini saya akan menuliskan pemahaman awal bagaimana setup janus. Server janus dinyalakan. Setup client janus dengan janus.js. Ketika success kita attach pluginnnya. Jika success attach plugin, baru …">
 
 
 </head>
@@ -55,11 +55,13 @@
       </ul>
     </header>
     <div class="content">
-      <p>Janus adalah webrtc server, aplikasi yang bertugas dalam mengatur koneksi webrtc antar client. Namun kekurangan software ini adalah dokumentasinya yang kurang jelas. Disini saya akan menuliskan pemahaman awal bagaimana setup janus.
-1. Server janus dinyalakan.
-2. Setup client janus dengan janus.js. Ketika success kita attach pluginnnya.
-3. Jika success attach plugin, baru kita memiliki handle yang bisa untuk mengotak-atik plugin api.
-4. Dari handleplugin ini misal pada videoroom kita bisa request untuk create room, dsb.</p>
+      <p>Janus adalah webrtc server, aplikasi yang bertugas dalam mengatur koneksi webrtc antar client. Namun kekurangan software ini adalah dokumentasinya yang kurang jelas. Disini saya akan menuliskan pemahaman awal bagaimana setup janus.</p>
+<ol>
+<li>Server janus dinyalakan.</li>
+<li>Setup client janus dengan janus.js. Ketika success kita attach pluginnnya.</li>
+<li>Jika success attach plugin, baru kita memiliki handle yang bisa untuk mengotak-atik plugin api.</li>
+<li>Untuk melakukan operasi plugin, janus menggunakan json dan fungsi handle.send({//json}). Disini kita bisa melakukan operasi list group, create group, delete group, dsb. </li>
+</ol>
 <p>Sekian.</p>
     </div>
   </article>
