@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="./theme/css/theme.css">
 
   
-  <meta name="description" content="Janus adalah webrtc server, aplikasi yang bertugas dalam mengatur koneksi webrtc antar client. Namun kekurangan software ini adalah dokumentasinya yang kurang jelas. Disini saya akan menuliskan pemahaman awal bagaimana setup janus. 1. Server janus dinyalakan. 2. Setup client janus dengan janus.js. Ketika success kita attach pluginnnya. 3. Jika success …">
+  <meta name="description" content="Janus adalah webrtc server, aplikasi yang bertugas dalam mengatur koneksi webrtc antar client. Janus adalah open source, dan dikembangkan oleh beberapa orang saja. Jika saya lihat, karena SDMnya terbatas maka walaupun software ini bagus namun kurang dalam hal dokumentasi. Kualitas dokumentasi yang dibuat terdapat pada level medium kebawah, maksud saya …">
 
 
 </head>
@@ -55,15 +55,37 @@
       </ul>
     </header>
     <div class="content">
-      <p>Janus adalah webrtc server, aplikasi yang bertugas dalam mengatur koneksi webrtc antar client. Namun kekurangan software ini adalah dokumentasinya yang kurang jelas. Disini saya akan menuliskan pemahaman awal bagaimana setup janus.</p>
-<div class="highlight"><pre><span></span><span class="mi">1</span>. <span class="nv">Server</span> <span class="nv">janus</span> <span class="nv">dinyalakan</span>.
-<span class="mi">2</span>. <span class="nv">Setup</span> <span class="nv">client</span> <span class="nv">janus</span> <span class="nv">dengan</span> <span class="nv">janus</span>.<span class="nv">js</span>. <span class="nv">Ketika</span> <span class="nv">success</span> <span class="nv">kita</span> <span class="nv">attach</span> <span class="nv">pluginnnya</span>.
-<span class="mi">3</span>. <span class="nv">Jika</span> <span class="nv">success</span> <span class="nv">attach</span> <span class="nv">plugin</span>, <span class="nv">baru</span> <span class="nv">kita</span> <span class="nv">memiliki</span> <span class="nv">handle</span> <span class="nv">yang</span> <span class="nv">bisa</span> <span class="nv">untuk</span> <span class="nv">mengotak</span><span class="o">-</span><span class="nv">atik</span> <span class="nv">plugin</span> <span class="nv">api</span>.
-<span class="mi">4</span>. <span class="nv">Untuk</span> <span class="nv">melakukan</span> <span class="nv">operasi</span> <span class="nv">plugin</span>, <span class="nv">janus</span> <span class="nv">menggunakan</span> <span class="nv">json</span> <span class="nv">dan</span> <span class="nv">fungsi</span> <span class="nv">handle</span>.<span class="k">send</span><span class="ss">(</span>{<span class="o">//</span><span class="nv">json</span>}<span class="ss">)</span>. <span class="nv">Disini</span> <span class="nv">kita</span> <span class="nv">bisa</span> <span class="nv">melakukan</span> <span class="nv">operasi</span> <span class="nv">list</span> <span class="nv">group</span>, <span class="nv">create</span> <span class="nv">group</span>, <span class="nv">delete</span> <span class="nv">group</span>, <span class="nv">dsb</span>.
+      <p>Janus adalah webrtc server, aplikasi yang bertugas dalam mengatur koneksi webrtc antar client. Janus adalah open source, dan dikembangkan oleh beberapa orang saja. Jika saya lihat, karena SDMnya terbatas maka walaupun software ini bagus namun kurang dalam hal dokumentasi. Kualitas dokumentasi yang dibuat terdapat pada level medium kebawah, maksud saya kamu bisa mengerti bagaimana menggunakan janus jika kamu membaca dokumentasi dan membaca source codenya. Nah disini saya kan menuliskan pemahaman awal saya tentang bagaimana menggunakan janus.</p>
+<ol>
+<li>Jalankan server janus. Untuk menjalankan server janus kamu membutuhkan OS linux/Mac dan mengintsall janus sesuai dengan <a href="https://github.com/meetecho/janus-gateway">petunjuk install</a>. Software ini tidak bisa diinstall menggunakan satu klik saja atau satu command saja namun harus mengikuti petunjuk diatas.</li>
+<li>Buat file html dengan mengattach file adapter.js, janus.js. Untuk template dari sisi client bisa dilihat di<a href="https://github.com/meetecho/janus-gateway/tree/master/html">sini</a>.</li>
+<li>Init janus beserta konfigurasinya, jika suksek terhubung dengan janus server, maka kita bisa mengattach plugin yang mau kita pakai.</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="c1">// Init janus</span>
+<span class="kd">var</span> <span class="nx">pluginhandle</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">janus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Janus</span><span class="p">({</span><span class="c1">//conf},</span>
+    <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+        <span class="c1">// Attach plugin, bisa videoroom, audiobridge dll</span>
+        <span class="nx">janus</span><span class="p">.</span><span class="nx">attach</span><span class="p">({</span>
+            <span class="nx">plugin</span><span class="o">:</span><span class="s2">&quot;janus.conf.videoroom&quot;</span>
+        <span class="p">},</span>
+        <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">handle</span><span class="p">){</span>
+            <span class="nx">pluginhandle</span> <span class="o">=</span> <span class="nx">handle</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="p">);</span>
+    <span class="p">},</span>
+    <span class="nx">onmessage</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+
+    <span class="p">}</span>
+<span class="p">);</span>
 </pre></div>
 
 
-<p>Sekian.</p>
+<ol>
+<li>Setelah sukses mendapat handleplugin. Disini kita bisa mulai melakukan request misal untuk membuat room untuk videoroom/videoconference. Jika room sudah sukses dibuat, maka kita join, setelah sukses join baru kita mempublish media(video/audio) diroom tsb.</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="nx">pluginhandle</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span> <span class="c1">//request create room</span>
+</pre></div>
     </div>
   </article>
     </div>
