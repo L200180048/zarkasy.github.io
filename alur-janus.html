@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>  Alur Janus | Gardenia
+</title>
+  <link rel="canonical" href="./alur-janus.html">
+
+
+  <link rel="stylesheet" href="./theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./theme/css/pygments/default.min.css">
+  <link rel="stylesheet" href="./theme/css/theme.css">
+
+  
+  <meta name="description" content="Salah satu hal terpenting dari sebuah software adalah dokumentasi, mungkin bisa dibilang hal kedua terpenting setelah software itu sendiri, karena tanpa dokumentasi yang baik, software tersebut akan susah untuk digunakan. Hal ini terjadi dengan janus, janus ini sempat saya singgung di artikel sebelumnya, yaitu webrtc server. Janus sebagai open source …">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="title"><a href="./">Gardenia</a></h1>
+      <p class="text-muted">Zarkasy dan Keluarga</p>
+  </div>
+</div>    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>  Alur Janus
+</h1>
+      <hr>
+  <article class="article">
+    <header>
+      <ul class="list-inline">
+        <li class="list-inline-item text-muted" title="2019-07-12T10:56:00+08:00">
+          <i class="fa fa-clock-o"></i>
+          Fri 12 July 2019
+        </li>
+        <li class="list-inline-item">
+          <i class="fa fa-folder-open-o"></i>
+          <a href="./category/janus.html">Janus</a>
+        </li>
+          <li class="list-inline-item">
+            <i class="fa fa-user-o"></i>
+              <a href="./author/zarkasy.html">Zarkasy</a>          </li>
+      </ul>
+    </header>
+    <div class="content">
+      <p>Salah satu hal terpenting dari sebuah software adalah dokumentasi, mungkin bisa dibilang hal kedua terpenting setelah software itu sendiri, karena tanpa dokumentasi yang baik, software tersebut akan susah untuk digunakan. Hal ini terjadi dengan janus, janus ini sempat saya singgung di artikel sebelumnya, yaitu webrtc server. Janus sebagai open source hanya dikembangkan oleh beberapa orang saja, mungkin hal inilah yang menyebabkan rendahnya kualitas dari dokumentasinya. Pengalamanku memakai janus, butuh hampir tiga hari untuk bisa mengerti bagaimana alur kerjanya, dan aku harus bolak-balik baca dokumentasi dan source code, nyoba jalanin program sendiri untuk bisa mengerti alur janus ini seperti apa. Kenapa hal ini bisa terjadi dengan janus? Jawabannya adalah karena pengembang software ini tidak memberikan contoh yang jelas didalam dokumentasinya, namun contoh alur coding ditaruh didalam source code demo, jadi kita harus mengerti bagaimana demo itu berjalan, selain itu juga kita harus membaca dokumentasi yang tidak utuh tersebut. </p>
+<p>Tapi alhamdulillah setelah beberapa hari mencoba, akhirnya aku nemu juga dokumentasi yang memberi pencerahan. Bagi yang sedang belajar janus, silahkan lihat pada bagian ini:</p>
+<blockquote>
+<p>The idea behind it's usage is the following:</p>
+<ol>
+<li>you use attach() to create a Handle object;</li>
+<li>in the success callback, your application logic can kick in: you may want to send a message to the plugin (send({msg})), negotiate a PeerConnection with the plugin right away ( createOffer followed by a send({msg, jsep})) or wait for something to happen to do anything;</li>
+<li>the onmessage callback tells you when you've got messages from the plugin; if the jsep parameter is not null, just pass it to the library, which will take care of it for you; if it's an OFFER use createAnswer (followed by a send({msg, jsep}) to close the loop with the plugin), otherwise use handleRemoteJsep ;</li>
+<li>whether you took the initiative to set up a PeerConnection or the plugin did, the onlocalstream and/or the onremotestream callbacks will provide you with a stream you can display in your page;</li>
+<li>each plugin may allow you to manipulate what should flow through the PeerConnection channel: the send method and onmessage callback will allow you to handle this interaction (e.g., to tell the plugin to mute your stream, or to be notified about someone joining a virtual room), while the ondata callback is triggered whenever data is received on the Data Channel, if available (and the ondataopen callback will tell you when a Data Channel is actually available)</li>
+</ol>
+</blockquote>
+    </div>
+  </article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+<div class="row">
+  <ul class="col-sm-6 list-inline">
+      <li class="list-inline-item"><a href="./authors.html">Authors</a></li>
+    <li class="list-inline-item"><a href="./archives.html">Archives</a></li>
+    <li class="list-inline-item"><a href="./categories.html">Categories</a></li>
+  </ul>
+  <p class="col-sm-6 text-sm-right text-muted">
+    Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a>
+    / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+  </p>
+</div>    </div>
+  </footer>
+</body>
+
+</html>
